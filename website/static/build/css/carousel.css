@@ -1,0 +1,305 @@
+
+    /* .card-body.game-summary {
+        font-family: 'Josefin Slab';
+        font-weight: bold;
+    }
+
+    .card-body.game-desc {
+        font-family: 'Lato', sans-serif;
+    } */
+
+    .card {
+        text-align: justify;
+    }
+
+    .container-fluid {
+        background: rgba(255, 255, 0, 0.522);
+    }
+
+    @media (min-width: 992px) {
+
+        .fa-chevron-left {
+            color: #6F1F7E;
+            margin-right: 170px;
+        }
+    
+        .fa-chevron-right {
+            color: #6F1F7E;
+            margin-left: 170px;
+        }
+    
+        /* show 3 items */
+        .carousel-inner .active,
+        .carousel-inner .active + .carousel-item,
+        .carousel-inner .active + .carousel-item + .carousel-item {
+            display: block;
+        }
+        
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+            transition: none;
+        }
+        
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+          position: relative;
+          transform: translate3d(0, 0, 0);
+        }
+        
+        .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+            position: absolute;
+            top: 0;
+            right: -33.3333%;
+            z-index: -1;
+            display: block;
+            visibility: visible;
+        }
+        
+        /* left or forward direction */
+        .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+        .carousel-item-next.carousel-item-left + .carousel-item,
+        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+            position: relative;
+            transform: translate3d(-100%, 0, 0);
+            visibility: visible;
+        }
+        
+        /* farthest right hidden item must be abso position for animations */
+        .carousel-inner .carousel-item-prev.carousel-item-right {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            display: block;
+            visibility: visible;
+        }
+        
+        /* right or prev direction */
+        .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+        .carousel-item-prev.carousel-item-right + .carousel-item,
+        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+            position: relative;
+            transform: translate3d(100%, 0, 0);
+            visibility: visible;
+            display: block;
+            visibility: visible;
+        }
+    
+        .carousel-inner {
+            width: 100%;
+            height: 300px !important;
+        }
+    
+        .img-fluid  {
+            object-fit: cover !important;
+            height: 300px !important;
+            width: 300px !important;
+            object-position: 50% 0%;
+        }
+    }
+
+@media (min-width: 768px) and (max-width:991px) {
+
+    .fa-chevron-left {
+        color: #6F1F7E;
+        margin-right: 100px;
+    }
+
+    .fa-chevron-right {
+        color: #6F1F7E;
+        margin-left: 100px;
+    }
+
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+    
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+    .carousel-inner {
+        width: 100%;
+        height: 300px !important;
+    }
+
+    .img-fluid  {
+        object-fit: cover !important;
+        height: 300px !important;
+        width: 300px !important;
+        object-position: 50% 0%;
+    }
+}
+
+  @media (min-width: 576px) and (max-width: 767px) {
+    .fa-chevron-left {
+        color: #6F1F7E;
+        margin-right: 100px;
+    }
+
+    .fa-chevron-right {
+        color: #6F1F7E;
+        margin-left: 100px;
+    }
+
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+    
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-80%, 0, 0);
+        visibility: visible;
+    }
+    
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(80%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+    .carousel-inner {
+        width: 100%;
+        height: 120px !important;
+    }
+
+    .img-fluid  {
+        object-fit: cover !important;
+        height: 120px !important;
+        width: 120px !important;
+        object-position: 50% 0%;
+    }
+
+  }
+
+  @media (max-width: 575px)  and (min-width: 415px){
+
+    .fa-chevron-left {
+        color: #6F1F7E;
+        margin-right: 80px;
+    }
+
+    .fa-chevron-right {
+        color: #6F1F7E;
+        margin-left: 80px;
+    }
+    .carousel-inner {
+      width: 100%;
+      height: 200px !important;
+  }
+}
+  @media (max-width: 414px) {
+
+    .fa-chevron-left {
+        color: #6F1F7E;
+        margin-right: 50px;
+    }
+
+    .fa-chevron-right {
+        color: #6F1F7E;
+        margin-left: 50px;
+    }
+    .carousel-inner {
+      width: 100%;
+      height: 200px !important;
+  }
+}
