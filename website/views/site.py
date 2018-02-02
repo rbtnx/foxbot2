@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request
 from sqlalchemy import or_
-from wsgi import Game
+from website.dbmodel import Game
 
 site = Blueprint('site', __name__, template_folder="../templates")
 
