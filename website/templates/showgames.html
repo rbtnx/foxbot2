@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BGG Gamepicker</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='src/carousel.css') }}" rel="stylesheet" type="text/css" media="all">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='src/carousel.js') }}"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="container">
+  <div id="gameCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    <a class="carousel-control-prev" href="#gameCarousel" role="button" data-slide="prev">
+      <i class="fa fa-chevron-left fa-2x"></i>
+    </a>
+    <a class="carousel-control-next" href="#gameCarousel" role="button" data-slide="next">
+      <i class="fa fa-chevron-right fa-2x"></i>
+    </a>
+    <ol class="carousel-indicators">
+    {% for i in n %}
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{ i }}" {% if loop.first %} class="active" {% endif %}></li>
+    {% endfor %}
+    </ol>
+    <div class="carousel-inner row w-100 mx-auto">
+      {% for game in games %}
+      <div class="carousel-item col-md-4 col-sm-4 {% if loop.first %}active{% endif%}">
+        <a data-toggle="collapse"  aria-expanded="false" href=".multi-collapse-{{ game.gid }}" aria-controls="{{ game.gid }}text {{ game.gid }}desc">
+          <img class="img-fluid mx-auto d-block" src="{{ game.imageurl }}" alt="{{ game.name_col }}">
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+  </div>
+  <br><br>
+  <div class="container" id="accordion">
+    {% for game in games %}
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+          <div class="collapse multi-collapse-{{ game.gid }}" id="{{ game.gid }}text" data-parent="#accordion">
+            <div class="card card-body game-summary">
+              <h5><b>{{ game.name_col }}</b></h5>
+              <br>By: {% for a in game.authors %} {% if not loop.first %}, {% endif %}{{ a }} {% endfor %} 
+              <br>Playing time: {% if game.min_playing_time != game.max_playing_time %}{{ game.min_playing_time }} - {% endif %}{{ game.max_playing_time }} minutes
+              <br>BGG rank: {{ game.bgg_rank }}
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+        <div class="collapse multi-collapse-{{ game.gid }}" id="{{ game.gid }}desc" data-parent="#accordion">
+          <div class="card card-body game-desc">
+            {{ game.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
