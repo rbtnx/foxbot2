@@ -8,6 +8,9 @@
  * This plugin is available under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
  */
+
+var jQuery = require('jquery');
+
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD

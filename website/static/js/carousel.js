@@ -1,3 +1,5 @@
+import "../css/carousel.css";
+
 $('#carouselExample').on('slide.bs.carousel', function (e) {
 
     var $e = $(e.relatedTarget);

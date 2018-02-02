@@ -1,3 +1,5 @@
+import '../css/index.css';
+
 $("input[name='playtime']").TouchSpin({
     min: 10,
     max: 600,

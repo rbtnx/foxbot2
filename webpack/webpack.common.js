@@ -16,12 +16,20 @@ const path = require('path');
 module.exports = merge([
   {
     entry: {
-      app: path.resolve(parts.PATHS.assets, 'js', 'script.js'),
+      app: path.resolve(parts.PATHS.assets, 'js', 'index.js'),
+      barrating: path.resolve(parts.PATHS.assets, 'js', 'jquery.barrating.js'),
+      touchspin: path.resolve(parts.PATHS.assets, 'js', 'jquery.bootstrap-touchspin.js'),
+      carousel: path.resolve(parts.PATHS.assets, 'js', 'carousel.js'),
     },
     output: {
       path: parts.PATHS.output,
       publicPath: parts.PATHS.public,
       filename: 'js/[name].bundle.js',
+    },
+    externals: {
+        // require("jquery") is external and available
+        //  on the global var jQuery
+        "jquery": "jQuery"
     },
   },
   parts.extractCSS({

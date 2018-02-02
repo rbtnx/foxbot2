@@ -1,8 +1,5 @@
-import os
-
-
 class Config(object):
-    APP_NAME = "TEST APPLICATION"
+    APP_NAME = "Foxbot Game Picker"
     STATIC_FOLDER = 'website/static'
     DEBUG = True
 
@@ -10,7 +7,10 @@ class Config(object):
     TESTING = False
     STAGING = False
     PRODUCTION = False
-
+    # on windows:
+    SQLALCHEMY_DATABASE_URI = 'postgresql://kathrin:password@localhost:5433/gamepicker'
+    # on linux:
+    #SQLALCHEMY_DATABASE_URI = 'postgresql://kathrin@localhost/gamepicker'
 
 class DevelopmentConfig(Config):
     DEVELOPMENT = True
