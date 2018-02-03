@@ -17,7 +17,8 @@ def map_mechanic(arg):
 
 @site.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    numgames = Game.query.count()
+    return render_template('index.html', numgames=numgames)
 
 @site.route('/process', methods=['GET', 'POST'])
 def process():

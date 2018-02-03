@@ -21,6 +21,17 @@
 <body>
   <div class="container-fluid">
     <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-3" style="text-align: right">
+          <img class="img-logo" src="{{ url_for('static', filename='fuchs.png') }}" width="40px" height="40px" align="top">
+        </div>
+        <div class="col-6">
+          <h3>I found {{ n|length }} games for you!</h3>
+        </div>
+      </div>
+    </div>
+    <div clas="container"><p></p></div>
+    <div class="container">
   <div id="gameCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
     <a class="carousel-control-prev" href="#gameCarousel" role="button" data-slide="prev">
       <i class="fa fa-chevron-left fa-2x"></i>
@@ -36,7 +47,7 @@
     <div class="carousel-inner row w-100 mx-auto">
       {% for game in games %}
       <div class="carousel-item col-md-4 col-sm-4 {% if loop.first %}active{% endif%}">
-        <a data-toggle="collapse"  aria-expanded="false" href=".multi-collapse-{{ game.gid }}" aria-controls="{{ game.gid }}text {{ game.gid }}desc">
+        <a data-toggle="collapse"  {% if loop.first %} aria-expanded="true" {% else %} aria-expanded="false" {% endif %} href=".multi-collapse-{{ game.gid }}" aria-controls="{{ game.gid }}text {{ game.gid }}desc">
           <img class="img-fluid mx-auto d-block" src="{{ game.imageurl }}" alt="{{ game.name_col }}">
         </a>
       </div>

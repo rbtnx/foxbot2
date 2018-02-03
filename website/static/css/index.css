@@ -7,11 +7,6 @@
  *  Under Apache License v2.0 License
  */
 
-  /* body {
-    font-family: 'Josefin Slab';
-    font-weight: bold;
-  } */
-
 .br-theme-bars-movie .br-widget {
     display: block;
     height: 10px;
@@ -146,6 +141,10 @@
     margin-right: auto;
     background: #6F1F7E;
     border-color: #6F1F7E;
+  }
+
+  .btn.btn-sm {
+    display: inline-block;
   }
 
   /* .container {

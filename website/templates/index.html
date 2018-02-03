@@ -8,7 +8,6 @@
   
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-  <!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet'  type='text/css'> -->
   <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
   <link href="{{ url_for('static', filename='build/css/app.css') }}" rel="stylesheet" type="text/css" media="all">
   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
@@ -16,6 +15,15 @@
   <script src="{{ url_for('static', filename='build/js/touchspin.bundle.js') }}"></script>
 <body>
 <form action="http://localhost:5000/process" method="POST">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8 col-sm-8 col-md-6 col-lg-6 col-xl-6">
+      <br><br><br>
+      There are {{ numgames }} games in our collection. Quite overwhelming, huh? Let me help you find a suitable game by answering some questions below or directly <button type="button" class="btn btn-primary btn-sm">Go To Collection</button>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-8 col-sm-8 col-md-6 col-lg-4 col-xl-4">
