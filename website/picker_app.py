@@ -1,5 +1,6 @@
 from flask import Flask, Blueprint
 from werkzeug.utils import find_modules, import_string
+from website.dbmodel import db
 import website.utils as utils
 
 def create_app(config):
@@ -27,6 +28,7 @@ def create_app(config):
 
     for r in registration_functions:
         r(app)
+    db.init_app(app)
 
     return app
 
