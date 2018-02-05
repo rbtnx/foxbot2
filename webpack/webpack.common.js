@@ -16,9 +16,7 @@ const path = require('path');
 module.exports = merge([
   {
     entry: {
-      app: path.resolve(parts.PATHS.assets, 'js', 'index.js'),
-      barrating: path.resolve(parts.PATHS.assets, 'js', 'jquery.barrating.js'),
-      touchspin: path.resolve(parts.PATHS.assets, 'js', 'jquery.bootstrap-touchspin.js'),
+      index: path.resolve(parts.PATHS.assets, 'js', 'index.js'),
       carousel: path.resolve(parts.PATHS.assets, 'js', 'carousel.js'),
     },
     output: {

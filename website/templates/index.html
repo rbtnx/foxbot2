@@ -9,13 +9,13 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
-  <link href="{{ url_for('static', filename='build/css/app.css') }}" rel="stylesheet" type="text/css" media="all">
+  <link href="{{ url_for('static', filename='build/css/index.css') }}" rel="stylesheet" type="text/css" media="all">
   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-  <script src="{{ url_for('static', filename='build/js/touchspin.bundle.js') }}"></script>
+  <!-- <script src="{{ url_for('static', filename='build/js/touchspin.bundle.js') }}"></script> -->
 <body>
-<!--<form action="http://localhost:5000/process" method="POST"> -->
-<form action="http://18.219.50.112/process" method="POST">
+<form action="http://localhost:5000/process" method="POST">
+<!-- <form action="http://18.219.50.112/process" method="POST"> -->
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-8 col-sm-8 col-md-6 col-lg-6 col-xl-6">
@@ -32,7 +32,7 @@
       <div class="form-group">
         <label for="playnum">How many players are in your group?</label>
         <input id="playnum" type="text" value="4" name ="playnum">
-        <script src="{{ url_for('static', filename='build/js/app.bundle.js') }}"></script>
+        <script src="{{ url_for('static', filename='build/js/index.bundle.js') }}"></script>
       </div>
       <br><br>
     </div>
@@ -45,7 +45,7 @@
       <div class="form-group">
         <label class="form-label" id="playtime">How much time do you want to spend playing the game?</label>
         <input id="playtime" type="text" value="60" name="playtime">
-        <script src="{{ url_for('static', filename='build/js/app.bundle.js') }}"></script>
+        <script src="{{ url_for('static', filename='build/js/index.bundle.js') }}"></script>
         <br><br>
       </div>
     </div>
@@ -66,14 +66,7 @@
             <option value="4">Medium Heavy</option>
             <option value="5">Heavy</option>
           </select>
-        <script src="{{ url_for('static', filename='build/js/barrating.bundle.js') }}"></script>
-        <script type="text/javascript">
-        $(function() {
-          $('#weight').barrating({
-              theme: 'bars-movie'
-          });
-        });
-        </script>
+        <script src="{{ url_for('static', filename='build/js/index.bundle.js') }}"></script>
       </div>
       <br><br><br>
     </div>
