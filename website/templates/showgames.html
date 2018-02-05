@@ -26,7 +26,9 @@
           <img class="img-logo" src="{{ url_for('static', filename='fuchs.png') }}" width="40px" height="40px" align="top">
         </div>
         <div class="col-6">
-          <h3>I found {{ n|length }} games for you!</h3>
+          {% if n|length == 0 %}<h3>I didn't find any games.. </h3>
+          {% elif n|length == 1 %}<h3>I found 1 game for you!</h3>
+          {% else %}<h3>I found {{ n|length }} games for you!</h3>{% endif %}
         </div>
       </div>
     </div>

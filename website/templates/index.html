@@ -14,13 +14,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename='build/js/touchspin.bundle.js') }}"></script>
 <body>
-<!--<form action="http://localhost:5000/process" method="POST"> -->
-<form action="http://18.219.50.112/process" method="POST">
+<form action="http://localhost:5000/process" method="POST">
+<!-- <form action="http://18.219.50.112/process" method="POST"> -->
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-8 col-sm-8 col-md-6 col-lg-6 col-xl-6">
       <br><br><br>
-      There are {{ numgames }} games in our collection. Quite overwhelming, huh? Let me help you find a suitable game by answering some questions below or directly <button type="button" class="btn btn-primary btn-sm">Go To Collection</button>
+      There are <h3 class="numgames">{{ numgames }}</h3> games in our collection. Let me help you find a suitable game by answering some questions below or <button type="button" class="btn btn-primary btn-sm">Browse Collection</button>
     </div>
   </div>
 </div>
@@ -83,7 +83,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
-      You can narrow my suggestions by telling me if the game should use one of the given game mechanics. <br><br>
+      You can narrow my suggestions by telling me if the game should use any of the given game mechanics. <br><br>
       <div class="form-group">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" name="mechCheck" value="coop">
@@ -106,7 +106,7 @@
         <label class="form-check-label" for="inlineCheckbox2">Deck building</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="mechCheck" value="workerPlace">
+        <input class="form-check-input" type="checkbox" name="mechCheck" value="workerPlace">
         <label class="form-check-label" for="inlineCheckbox2">Worker placement</label>
       </div>
       </div>

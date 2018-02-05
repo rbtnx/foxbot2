@@ -170,3 +170,5 @@ typings/
 .next
 
 foxbot.pem
+website/config.py
+dbtest.py
