@@ -30,7 +30,7 @@ def process():
     playnum = 4
     playtime = 90
     weight = 0
-    mechanics = ['workerPlace']
+    mechanics = ['tilePlace']
     if (playnum and playtime):
         gamequery = Game.query.filter(Game.maxplayers >= playnum, playnum == Game.best_playnum.any_(),
                                         Game.max_playing_time <= playtime)

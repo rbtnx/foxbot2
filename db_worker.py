@@ -1,8 +1,9 @@
 from boardgamegeek import BGGClient
 from flask_sqlalchemy import SQLAlchemy
+import requests
 from website.picker_app import create_app
-import website.config as config
 from website.dbmodel import Game, db
+import website.config as config
 """ Worker script to get a collection and all game data from a collection
 Should run once a day, preferably in the morning
 TODO: Unit tests!!! """
@@ -61,19 +62,30 @@ def db_update(database, game_list, collection):
     """ Updates db data """
     for g, c in list(zip(game_list, list(collection))):
         numfit = _suggest_playernum(g.suggested_numplayers)
+        imageurl = _update_imageurl(g.image)
         game = Game(gid=g.id, name_col=c.name, name_en=g.name, authors=g.designers,
                     maxplayers=g.max_players, minplayers=g.min_players, max_playing_time=g.max_playing_time,
                     min_playing_time=g.min_playing_time, best_playnum=numfit[0], not_recom_playnum=numfit[1],
-                    description=g.description, imageurl=g.image, thumburl=g.thumbnail, mechanics=g.mechanics,
+                    description=g.description, imageurl=imageurl, thumburl=g.thumbnail, mechanics=g.mechanics,
                     average_weight=g.rating_average_weight, bgg_rank=g.stats['ranks'][0]['value'])
         database.session.add(game)
         database.session.commit()
+
+def _update_imageurl(imageurl):
+    img = imageurl[:-4] + '_md' + imageurl[-4:]
+    r = requests.head(img)
+    if r.status_code == 200:
+        imageurl = img
+    print(imageurl)
+    return imageurl
+
 
 def update_init():
     app = create_app(config.DevelopmentConfig)
     app.app_context().push()
     db.init_app(app)
     games, col = get_games("Fuchsteufel")
+    games = update_imageurl(games)
     try: 
         db_update(db, games, col)
         print("Successfully updated")
