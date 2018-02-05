@@ -48,7 +48,7 @@
       {% for game in games %}
       <div class="carousel-item col-md-4 col-sm-4 {% if loop.first %}active{% endif%}">
         <a data-toggle="collapse"  {% if loop.first %} aria-expanded="true" {% else %} aria-expanded="false" {% endif %} href=".multi-collapse-{{ game.gid }}" aria-controls="{{ game.gid }}text {{ game.gid }}desc">
-          <img class="img-fluid mx-auto d-block" src="{{ game.imageurl }}" alt="{{ game.name_col }}">
+          <img class="img-fluid mx-auto d-block" src="{{ game.thumburl }}" alt="{{ game.name_col }}">
         </a>
       </div>
       {% endfor %}
