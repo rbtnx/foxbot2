@@ -10,9 +10,9 @@ class Config(object):
     # on windows:
     # SQLALCHEMY_DATABASE_URI = 'postgresql://kathrin:password@localhost:5433/gamepicker'
     # on linux:
-    SQLALCHEMY_DATABASE_URI = 'postgresql://kathrin@localhost/gamepicker'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql://kathrin@localhost/gamepicker'
     # on production:
-    # SQLALCHEMY_DATABASE_URI = 'postgresql://apps:apps@localhost/gamepicker'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://apps:apps@localhost/gamepicker'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevelopmentConfig(Config):
