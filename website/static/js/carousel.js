@@ -1,6 +1,8 @@
+var swiperight = require('./jquery.mobile.custom');
+var swipeleft = require('./jquery.mobile.custom');
 import "../css/carousel.css";
 
-$('#carouselExample').on('slide.bs.carousel', function (e) {
+$('#gameCarousel').on('slide.bs.carousel', function (e) {
 
     var $e = $(e.relatedTarget);
     var idx = $e.index();
@@ -20,3 +22,12 @@ $('#carouselExample').on('slide.bs.carousel', function (e) {
         }
     }
 });
+
+$(document).ready(function() {  
+    $("#gameCarousel").swiperight(function() {  
+       $(this).carousel('prev');  
+         });  
+    $("#gameCarousel").swipeleft(function() {  
+       $(this).carousel('next');  
+    });  
+}); 
