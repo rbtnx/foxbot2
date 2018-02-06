@@ -172,3 +172,4 @@ typings/
 foxbot.pem
 website/config.py
 dbtest.py
+.vscode/
