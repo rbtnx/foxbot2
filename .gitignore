@@ -170,6 +170,5 @@ typings/
 .next
 
 foxbot.pem
-website/config.py
-dbtest.py
 .vscode/
+website/static/assets/

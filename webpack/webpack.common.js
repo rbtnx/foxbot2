@@ -18,6 +18,7 @@ module.exports = merge([
     entry: {
       index: path.resolve(parts.PATHS.assets, 'js', 'index.js'),
       carousel: path.resolve(parts.PATHS.assets, 'js', 'carousel.js'),
+      slick: path.resolve(parts.PATHS.assets, 'js', 'showgames.js'),
     },
     output: {
       path: parts.PATHS.output,
@@ -35,6 +36,24 @@ module.exports = merge([
     use: ['css-loader'],
     output: 'css/[name].css', 
   }),
+  
+  // {
+  //   module: {
+  //     rules: [
+  //       {
+  //         test: /\.css$/,
+  //         use: [ 'style-loader', 'css-loader' ]
+  //       },
+  //       {
+  //         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+  //         loader: 'url-loader',
+  //         options: {
+  //         limit: 10000
+  //         }
+  //       }
+  //     ]
+  //   }
+  // },
   parts.loadJavaScript({
     include: path.resolve(parts.PATHS.assets, 'js'),
     exclude: /node_modules/,

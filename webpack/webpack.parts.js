@@ -35,7 +35,14 @@ exports.extractCSS = ({test, output, use} = {}) => {
         use: plugin.extract({
           use,
         }),
-      }],
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
+      }]
     },
     plugins: [plugin],
   };
@@ -63,3 +70,4 @@ exports.clean = (dirsToClean, options ={}) => ({
     new CleanWebpackPlugin(dirsToClean, options),
   ],
 });
+

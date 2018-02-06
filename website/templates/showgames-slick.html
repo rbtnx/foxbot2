@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foxbot</title>
+
+    <!-- <link rel="stylesheet" href="../static/build/css/slick.css"> -->
+    <!-- <link href="{{ url_for('static', filename='build/css/carousel.css') }}" rel="stylesheet" type="text/css" media="all"> -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <!-- <script src="{{ url_for('static', filename='build/js/carousel.bundle.js') }}"></script> -->
+
+    <script src="../static/build/js/slick.bundle.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='build/css/slick.css') }}" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+  </head>
+
+  <body>
+    <div class="container-fluid" style="background-color:rgb(190, 199, 61)">
+      <div class="row justify-content-center">
+        <div class="col-6" style="background-color:cadetblue">
+          <div class="games-carousel">
+          <!-- <div class="slider games-carousel slick-slider slick-dotted" role="toolbar"> -->
+            <!-- <button class="slick-prev" type="button" data-role="none" aria-label="previous" role="button" style="display: block;"></button> -->
+            {% for game in games %}
+            <div>
+              <img class="game-image" data-lazy="{{ game.imageurl }}">
+              <!-- <img class="game-image" src="{{ game.imageurl }}"> -->
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

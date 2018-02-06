@@ -1,6 +1,7 @@
+from os import chdir
 from boardgamegeek import BGGClient
 from flask_sqlalchemy import SQLAlchemy
-import requests
+import requests, wget
 from website.picker_app import create_app
 from website.dbmodel import Game, db
 import website.config as config
@@ -76,7 +77,6 @@ def _update_imageurl(imageurl):
     r = requests.head(img)
     if r.status_code == 200:
         imageurl = img
-    print(imageurl)
     return imageurl
 
 
@@ -85,7 +85,7 @@ def update_init():
     app.app_context().push()
     db.init_app(app)
     games, col = get_games("Fuchsteufel")
-    games = update_imageurl(games)
+    games = _update_imageurl(games)
     try: 
         db_update(db, games, col)
         print("Successfully updated")

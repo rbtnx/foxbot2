@@ -45,5 +45,5 @@ def process():
         gamequery = gamequery.order_by(Game.bgg_rank)
         games = gamequery.all()
 
-        return render_template('showgames.html', games=games, n=range(len(games)))
+        return render_template('showgames-slick.html', games=games, n=range(len(games)))
     return("Ooops.. you didn't fill out all the questions..")
